@@ -1,22 +1,22 @@
 PODS:
-  - bumper (0.2.0)
-  - Nimble (5.1.1)
-  - Quick (1.0.0)
+  - bumper (1.1.0)
+  - Nimble (7.0.2)
+  - Quick (1.2.0)
 
 DEPENDENCIES:
   - bumper (from `../`)
-  - Nimble (~> 5.1.1)
-  - Quick (~> 1.0.0)
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
 
 EXTERNAL SOURCES:
   bumper:
     :path: ../
 
 SPEC CHECKSUMS:
-  bumper: 830339a65bb570bbf07787ddf8923719ace5fd09
-  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
-  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+  bumper: 8d5499e9774aa148763ab9a1eebcaf5e0ed7beff
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
-PODFILE CHECKSUM: 27d4ff39f065e65a26fe5e1dacf03c6817e4edc7
+PODFILE CHECKSUM: 66984d498553a544364f50e7c1966ee1d48e4a70
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1
