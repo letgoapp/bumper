@@ -11,7 +11,7 @@
 	},
     {
 		"name": "NameOfThirdFeature",
-		"values": ["true", "false"],
+		"values": ["false", "true"],
 		"description": "Boolean test description"
 	}
 ]

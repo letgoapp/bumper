@@ -24,6 +24,7 @@ public class Bumper {
         return Bumper.sharedInstance.value(for: key)
     }
 
+
     // MARK: - Internal
 
     static let sharedInstance: Bumper = Bumper(bumperDAO: UserDefaults.standard)
@@ -47,7 +48,7 @@ public class Bumper {
     }
 
     private let bumperDAO: BumperDAO
-
+    
     init(bumperDAO: BumperDAO) {
         self.bumperDAO = bumperDAO
     }
@@ -73,4 +74,27 @@ public class Bumper {
     }
 }
 
-extension UserDefaults: BumperDAO {}
+
+#if (RX_BUMPER)
+    import RxSwift
+    
+    extension Bumper {
+        
+        public static var enabledObservable: Observable<Bool> {
+            return Bumper.sharedInstance.enabledObservable
+        }
+        
+        public static func observeValue(for key: String) -> Observable<String?> {
+            return Bumper.sharedInstance.observeValue(for: key)
+        }
+        
+        var enabledObservable: Observable<Bool> {
+            return bumperDAO.boolObservable(for: Bumper.bumperEnabledKey).map { $0 ?? false }
+        }
+        
+        func observeValue(for key: String) -> Observable<String?> {
+            return bumperDAO.stringObservable(for: Bumper.bumperPrefix + key)
+        }
+    }
+#endif
+

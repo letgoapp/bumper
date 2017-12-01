@@ -21,9 +21,32 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "bumper/**/*",
-  "preserve_paths": [
-    "scripts/**/*"
-  ],
-  "frameworks": "UIKit"
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "bumper/**/*",
+      "preserve_paths": [
+        "scripts/**/*"
+      ],
+      "frameworks": "UIKit"
+    },
+    {
+      "name": "RxObserving",
+      "dependencies": {
+        "bumper/Core": [
+
+        ],
+        "RxSwift": [
+          "~> 4.0.0"
+        ],
+        "RxCocoa": [
+          "~> 4.0.0"
+        ]
+      },
+      "xcconfig": {
+        "OTHER_SWIFT_FLAGS": "$(inherited) -D RX_BUMPER"
+      }
+    }
+  ]
 }

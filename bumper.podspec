@@ -22,8 +22,21 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'bumper/**/*'
-  s.preserve_paths = [ 'scripts/**/*' ]
 
-  s.frameworks = 'UIKit'
+
+  s.default_subspec = 'Core'
+  s.subspec 'Core' do |core|
+  # subspec for users who don't want Rx components
+    core.source_files = 'bumper/**/*'
+    core.preserve_paths = [ 'scripts/**/*' ]
+    core.frameworks = 'UIKit'
+  end
+
+  s.subspec 'RxObserving' do |rx|
+    rx.dependency 'bumper/Core'
+    rx.xcconfig =  
+        { 'OTHER_SWIFT_FLAGS' => '$(inherited) -D RX_BUMPER' }
+    rx.dependency 'RxSwift', '~> 4.0.0'
+    rx.dependency 'RxCocoa', '~> 4.0.0'
+  end
 end

@@ -1,7 +1,9 @@
+platform :ios, '8.0'
 use_frameworks!
 
 target 'bumper_Example' do
   pod 'bumper', :path => '../'
+  pod 'bumper/RxObserving', :path => '../'
 
   target 'bumper_Tests' do
     inherit! :search_paths
