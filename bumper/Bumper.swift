@@ -43,7 +43,10 @@ public class Bumper {
     var bumperViewData: [BumperViewData] {
         return features.flatMap { featureType in
             let value = self.value(for: featureType.key) ?? featureType.defaultValue
-            return BumperViewData(key: featureType.key, description: featureType.description, value: value, options: featureType.values)
+            return BumperViewData(key: featureType.key,
+                                  description: featureType.description,
+                                  value: value,
+                                  options: featureType.values)
         }
     }
 
@@ -62,6 +65,14 @@ public class Bumper {
             guard let value = bumperDAO.string(forKey: Bumper.bumperPrefix + $0.key) else { return }
             cache[$0.key] = $0.values.contains(value) ? value : $0.defaultValue
         })
+    }
+
+    func update(with values: [[String: Any]]) {
+        values.forEach { dict in
+            guard let value = dict["value"] as? String,
+                let key = dict["key"] as? String else { return }
+            cache[key] = value
+        }
     }
 
     func value(for key: String) -> String? {
