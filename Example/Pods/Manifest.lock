@@ -18,16 +18,9 @@ DEPENDENCIES:
   - Nimble (~> 7.0.2)
   - Quick (~> 1.2.0)
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Nimble
-    - Quick
-    - RxCocoa
-    - RxSwift
-
 EXTERNAL SOURCES:
   bumper:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   bumper: 69af73cc434b5925cd18abca712f19fc680c0130
@@ -38,4 +31,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: cc0d06121bc5d982312da84c4cc95f59cccd984b
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0
