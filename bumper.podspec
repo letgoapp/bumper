@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'bumper'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'A/B Testing debug helper framework for iOS'
   s.description      = <<-DESC
     Letgo Feature flags library.
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     Includes a ruby script that generates all boilerplate for all A/B tests from a json file that
     contains the info.
     DESC
-
+  s.swift_version    = '4.0'
   s.homepage         = 'https://github.com/letgoapp/bumper'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = {
@@ -21,8 +21,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-
-
 
   s.default_subspec = 'Core'
   s.subspec 'Core' do |core|
