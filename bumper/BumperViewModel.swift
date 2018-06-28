@@ -58,7 +58,6 @@ final class BumperViewModel {
     func filter(with filter: String) {
         if filter.count > 0 {
             rx_filtered.value = viewData.filter { $0.description.contains(filter) }
-            return
         } else {
             rx_filtered.value = viewData
         }
