@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'bumper'
-  s.version          = '1.2.2'
+  s.version          = '1.3.0'
   s.summary          = 'A/B Testing debug helper framework for iOS'
   s.description      = <<-DESC
     Letgo Feature flags library.
@@ -24,17 +24,10 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'Core'
   s.subspec 'Core' do |core|
-  # subspec for users who don't want Rx components
     core.source_files = 'bumper/**/*'
     core.preserve_paths = [ 'scripts/**/*' ]
     core.frameworks = 'UIKit'
-  end
-
-  s.subspec 'RxObserving' do |rx|
-    rx.dependency 'bumper/Core'
-    rx.xcconfig =  
-        { 'OTHER_SWIFT_FLAGS' => '$(inherited) -D RX_BUMPER' }
-    rx.dependency 'RxSwift', '~> 4.0.0'
-    rx.dependency 'RxCocoa', '~> 4.0.0'
-  end
+  	core.dependency 'RxSwift', '~> 4.0.0'
+	core.dependency 'RxCocoa', '~> 4.0.0'
+	end
 end
