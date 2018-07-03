@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'bumper'
-  s.version          = '1.3.0'
+  s.version          = '1.3.1'
   s.summary          = 'A/B Testing debug helper framework for iOS'
   s.description      = <<-DESC
     Letgo Feature flags library.
