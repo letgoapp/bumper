@@ -61,6 +61,7 @@ fileprivate extension BumperViewController {
                                                             target: self,
                                                             action: #selector(share))
 
+        searchBar.delegate = self
         setupRx()
     }
 
@@ -183,6 +184,11 @@ extension BumperViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - UISearchBarDelegate
+
+extension BumperViewController: UISearchBarDelegate {
+    public func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool { return true }
+}
 
 // MARK: - BumperViewModelDelegate
 
