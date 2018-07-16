@@ -36,6 +36,7 @@ public final class BumperViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+        attachKeyboardViewControllerTo(self)
 
         setupUI()
         initTableView()
@@ -209,5 +210,12 @@ extension BumperViewController: BumperViewModelDelegate {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension BumperViewController: KeyboardDelegate {
+    func update(withKeyboard keyboard: KeyboardData) {
+        tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: CGFloat(keyboard.maxYCoordinate), right: 0)
+        tableView.layoutIfNeeded()
     }
 }
