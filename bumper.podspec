@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     Includes a ruby script that generates all boilerplate for all A/B tests from a json file that
     contains the info.
     DESC
-  s.swift_version    = '4.0'
+  s.swift_version    = '4.2'
   s.homepage         = 'https://github.com/letgoapp/bumper'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = {
