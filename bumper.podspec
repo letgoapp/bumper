@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
     core.source_files = 'bumper/**/*'
     core.preserve_paths = [ 'scripts/**/*' ]
     core.frameworks = 'UIKit'
-  	core.dependency 'RxSwift', '~> 4.0.0'
-	core.dependency 'RxCocoa', '~> 4.0.0'
+  	core.dependency 'RxSwift', '~> 4.3.1'
+	  core.dependency 'RxCocoa', '~> 4.3.1'
 	end
 end
